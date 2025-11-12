@@ -337,3 +337,56 @@ button:focus {
   background-color: var(--secondary);
   color: var(--secondary-foreground);
 }
+
+
+/* Additional responsive utilities */
+@layer utilities {
+  .section-padding {
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Better responsive videos */
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent layout shift */
+@supports (content-visibility: auto) {
+  .lazy-content {
+    content-visibility: auto;
+  }
+}
+
+/* Better focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Smooth animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
